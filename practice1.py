@@ -65,3 +65,72 @@ def exerciseSix():
   startFromNumber = int(input("Ingrese el numero inicial para la suma:"))
   stopAtNumber = int(input("Ingrese el numero hasta donde sumar:"))
   recursiveSum(startFromNumber, stopAtNumber)
+
+# 1.2 Firsts programs using strings.
+
+# Ex 7: Write a program that recieves a name and returns the name concatenated twice.
+
+def exerciseSeven(name):
+  print(name*2)
+
+# Ex 8: Write a program that recieves a name and a number N, and returns the name given N times.
+
+def exerciseEight(name, number):
+  print(name*number)
+
+# 1.3 Firsts interactive programs.
+
+# Ex 9: Complete the following items:
+#   - Write a sum function that recieves two numbers and returns the result of the sum.
+#   - Write a substraction function that recieves two numbers and returns the result.
+#   - Write a multiplication function that recieves two numbers and returns the result.
+#   - Write a division function that recieves two numbers and returns the result.
+#   - Write a program that shows a message asking the user to choose one of the following options:
+#   - 1. Suma
+#   - 2. Resta
+#   - 3. Multiplicacion
+#   - 4. Division
+#   And then ask for two numbers and show the result.
+#   - Add an option like this:
+#   - 5. Salir
+#   So that while the user doenst press 5, the program keeps working following the past items.
+
+def sum(number1, number2):
+  return number1 + number2
+
+def substraction(number1, number2):
+  return number1 - number2
+
+def multiplication(number1, number2):
+  return number1 * number2
+
+def division(number1, number2):
+  if(number2 == 0):
+    return "No se puede dividir por 0"
+  return number1 / number2
+
+def calculator():
+  print("\n1. Suma \n2. Resta \n3. Multiplicacion \n4. Division\n\n5. Salir")
+  operation = int(input("\nPor favor seleccione la operacion a realizar: "))
+  if (operation == 5):
+    print("Hasta luego...")
+    return
+  number1 = int(input("Ingrese el primer numero: "))
+  number2 = int(input("Ingrese el segundo numero: "))
+
+  if (operation == 1):
+    result = sum(number1, number2)
+    print("El resultado de la operacion es: " + str(result))
+  elif (operation == 2):
+    result = substraction(number1, number2)
+    print("El resultado de la operacion es: " + str(result))
+  elif (operation == 3):
+    result = multiplication(number1, number2)
+    print("El resultado de la operacion es: " + str(result))
+  elif (operation == 4):
+    result = division(number1, number2)
+    print("El resultado de la operacion es: " + str(result))
+  calculator()
+
+
+calculator()
